@@ -3,6 +3,7 @@
 import React from 'react';
 import Image from 'next/image';
 import Link from 'next/link';
+import { motion, AnimatePresence } from 'framer-motion';
 import { Minus, Plus, Trash2 } from 'lucide-react';
 import { CartItem as CartItemType } from '@/types';
 import { cn, formatPrice } from '@/lib/utils';
@@ -11,9 +12,10 @@ import { useCart } from '@/context/CartContext';
 interface CartItemProps {
     item: CartItemType;
     className?: string;
+    index?: number;
 }
 
-export default function CartItem({ item, className }: CartItemProps) {
+export default function CartItem({ item, className, index = 0 }: CartItemProps) {
     const { updateQuantity, removeFromCart } = useCart();
     const { product, quantity } = item;
 
@@ -34,11 +36,20 @@ export default function CartItem({ item, className }: CartItemProps) {
     };
 
     return (
-        <div
+        <motion.div
+            layout
+            initial={{ opacity: 0, x: -30 }}
+            animate={{ opacity: 1, x: 0 }}
+            exit={{ opacity: 0, x: 30, scale: 0.9 }}
+            transition={{
+                duration: 0.4,
+                delay: index * 0.1,
+                ease: [0.25, 0.46, 0.45, 0.94]
+            }}
             className={cn(
                 'flex flex-col sm:flex-row gap-4 p-4 bg-white dark:bg-gray-800 rounded-2xl',
                 'border border-gray-100 dark:border-gray-700',
-                'transition-all duration-300 hover:shadow-lg',
+                'hover:shadow-lg transition-shadow duration-300',
                 className
             )}
         >
@@ -47,13 +58,19 @@ export default function CartItem({ item, className }: CartItemProps) {
                 href={`/products/${product.id}`}
                 className="relative w-full sm:w-32 h-32 rounded-xl overflow-hidden bg-gray-50 dark:bg-gray-900 flex-shrink-0"
             >
-                <Image
-                    src={product.image}
-                    alt={product.name}
-                    fill
-                    className="object-cover hover:scale-110 transition-transform duration-300"
-                    sizes="128px"
-                />
+                <motion.div
+                    whileHover={{ scale: 1.1 }}
+                    transition={{ duration: 0.3 }}
+                    className="absolute inset-0"
+                >
+                    <Image
+                        src={product.image}
+                        alt={product.name}
+                        fill
+                        className="object-cover"
+                        sizes="128px"
+                    />
+                </motion.div>
             </Link>
 
             {/* Product Info */}
@@ -81,7 +98,9 @@ export default function CartItem({ item, className }: CartItemProps) {
                 <div className="flex items-center justify-between mt-4">
                     {/* Quantity Controls */}
                     <div className="flex items-center gap-2">
-                        <button
+                        <motion.button
+                            whileHover={{ scale: 1.1 }}
+                            whileTap={{ scale: 0.9 }}
                             onClick={handleDecrement}
                             disabled={quantity <= 1}
                             className={cn(
@@ -92,11 +111,18 @@ export default function CartItem({ item, className }: CartItemProps) {
                             )}
                         >
                             <Minus className="w-4 h-4" />
-                        </button>
-                        <span className="w-12 text-center font-semibold text-gray-900 dark:text-white">
+                        </motion.button>
+                        <motion.span
+                            key={quantity}
+                            initial={{ scale: 1.2 }}
+                            animate={{ scale: 1 }}
+                            className="w-12 text-center font-semibold text-gray-900 dark:text-white"
+                        >
                             {quantity}
-                        </span>
-                        <button
+                        </motion.span>
+                        <motion.button
+                            whileHover={{ scale: 1.1 }}
+                            whileTap={{ scale: 0.9 }}
                             onClick={handleIncrement}
                             disabled={quantity >= product.stock}
                             className={cn(
@@ -107,23 +133,30 @@ export default function CartItem({ item, className }: CartItemProps) {
                             )}
                         >
                             <Plus className="w-4 h-4" />
-                        </button>
+                        </motion.button>
                     </div>
 
                     {/* Line Total & Remove */}
                     <div className="flex items-center gap-4">
-                        <p className="font-bold text-gray-900 dark:text-white">
+                        <motion.p
+                            key={product.price * quantity}
+                            initial={{ scale: 1.1 }}
+                            animate={{ scale: 1 }}
+                            className="font-bold text-gray-900 dark:text-white"
+                        >
                             {formatPrice(product.price * quantity)}
-                        </p>
-                        <button
+                        </motion.p>
+                        <motion.button
+                            whileHover={{ scale: 1.1, color: '#ef4444' }}
+                            whileTap={{ scale: 0.9 }}
                             onClick={handleRemove}
                             className="p-2 rounded-lg text-red-500 hover:bg-red-50 dark:hover:bg-red-900/20 transition-colors"
                         >
                             <Trash2 className="w-5 h-5" />
-                        </button>
+                        </motion.button>
                     </div>
                 </div>
             </div>
-        </div>
+        </motion.div>
     );
 }

@@ -1,0 +1,6 @@
+{
+    "buildCommand": "cd smartshop && npm run build",
+    "outputDirectory": "smartshop/.next",
+    "installCommand": "cd smartshop && npm install",
+    "framework": "nextjs"
+}

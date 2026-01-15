@@ -2,8 +2,8 @@
 
 import React from 'react';
 import Image from 'next/image';
-import Link from 'next/link';
 import { useRouter } from 'next/navigation';
+import { motion } from 'framer-motion';
 import { ShoppingCart, Eye, Sparkles } from 'lucide-react';
 import { Product } from '@/types';
 import { cn, formatPrice, calculateDiscount } from '@/lib/utils';
@@ -14,9 +14,10 @@ import { useToast } from '@/components/ui/Toast';
 interface ProductCardProps {
     product: Product;
     className?: string;
+    index?: number;
 }
 
-export default function ProductCard({ product, className }: ProductCardProps) {
+export default function ProductCard({ product, className, index = 0 }: ProductCardProps) {
     const { addToCart, isInCart } = useCart();
     const { showToast } = useToast();
     const router = useRouter();
@@ -43,12 +44,23 @@ export default function ProductCard({ product, className }: ProductCardProps) {
         : 0;
 
     return (
-        <div
+        <motion.div
+            initial={{ opacity: 0, y: 30 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{
+                duration: 0.5,
+                delay: index * 0.1,
+                ease: [0.25, 0.46, 0.45, 0.94]
+            }}
+            whileHover={{
+                y: -8,
+                transition: { duration: 0.3, ease: "easeOut" }
+            }}
             className={cn(
                 'group relative bg-white dark:bg-gray-800 rounded-2xl overflow-hidden',
-                'shadow-md hover:shadow-2xl transition-all duration-500',
+                'shadow-md hover:shadow-2xl transition-shadow duration-500',
                 'border border-gray-100 dark:border-gray-700',
-                'transform hover:-translate-y-2 cursor-pointer',
+                'cursor-pointer',
                 className
             )}
             onClick={handleCardClick}
@@ -56,32 +68,60 @@ export default function ProductCard({ product, className }: ProductCardProps) {
             {/* Badges */}
             <div className="absolute top-3 left-3 z-10 flex flex-col gap-2">
                 {product.isNew && (
-                    <span className="flex items-center gap-1 px-2.5 py-1 bg-gradient-to-r from-blue-600 to-purple-600 text-white text-xs font-semibold rounded-full">
+                    <motion.span
+                        initial={{ scale: 0 }}
+                        animate={{ scale: 1 }}
+                        transition={{ delay: 0.3, type: "spring", stiffness: 500 }}
+                        className="flex items-center gap-1 px-2.5 py-1 bg-gradient-to-r from-blue-600 to-purple-600 text-white text-xs font-semibold rounded-full"
+                    >
                         <Sparkles className="w-3 h-3" /> NEW
-                    </span>
+                    </motion.span>
                 )}
                 {discount > 0 && (
-                    <span className="px-2.5 py-1 bg-red-500 text-white text-xs font-semibold rounded-full">
+                    <motion.span
+                        initial={{ scale: 0 }}
+                        animate={{ scale: 1 }}
+                        transition={{ delay: 0.4, type: "spring", stiffness: 500 }}
+                        className="px-2.5 py-1 bg-red-500 text-white text-xs font-semibold rounded-full"
+                    >
                         -{discount}%
-                    </span>
+                    </motion.span>
                 )}
             </div>
 
             {/* Image Container */}
             <div className="relative aspect-square overflow-hidden bg-gray-50 dark:bg-gray-900">
-                <Image
-                    src={product.image}
-                    alt={product.name}
-                    fill
-                    className="object-cover transition-transform duration-500 group-hover:scale-110"
-                    sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 25vw"
-                />
+                <motion.div
+                    className="absolute inset-0"
+                    whileHover={{ scale: 1.1 }}
+                    transition={{ duration: 0.6, ease: "easeOut" }}
+                >
+                    <Image
+                        src={product.image}
+                        alt={product.name}
+                        fill
+                        className="object-cover"
+                        sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 25vw"
+                    />
+                </motion.div>
+
                 {/* Overlay on hover */}
-                <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
+                <motion.div
+                    initial={{ opacity: 0 }}
+                    whileHover={{ opacity: 1 }}
+                    className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent"
+                />
 
                 {/* Quick action buttons */}
-                <div className="absolute bottom-4 left-4 right-4 flex gap-2 opacity-0 group-hover:opacity-100 translate-y-4 group-hover:translate-y-0 transition-all duration-300">
-                    <button
+                <motion.div
+                    initial={{ opacity: 0, y: 20 }}
+                    whileHover={{ opacity: 1, y: 0 }}
+                    transition={{ duration: 0.3 }}
+                    className="absolute bottom-4 left-4 right-4 flex gap-2 opacity-0 group-hover:opacity-100"
+                >
+                    <motion.button
+                        whileHover={{ scale: 1.05 }}
+                        whileTap={{ scale: 0.95 }}
                         onClick={handleAddToCart}
                         className={cn(
                             'flex-1 flex items-center justify-center gap-2 py-2.5 rounded-xl font-semibold text-sm transition-colors',
@@ -92,14 +132,16 @@ export default function ProductCard({ product, className }: ProductCardProps) {
                     >
                         <ShoppingCart className="w-4 h-4" />
                         {isInCart(product.id) ? 'In Cart' : 'Add to Cart'}
-                    </button>
-                    <button
+                    </motion.button>
+                    <motion.button
+                        whileHover={{ scale: 1.1 }}
+                        whileTap={{ scale: 0.9 }}
                         onClick={handleViewDetails}
                         className="flex items-center justify-center p-2.5 bg-white/90 rounded-xl hover:bg-white transition-colors"
                     >
                         <Eye className="w-5 h-5 text-gray-700" />
-                    </button>
-                </div>
+                    </motion.button>
+                </motion.div>
             </div>
 
             {/* Product Info */}
@@ -110,7 +152,7 @@ export default function ProductCard({ product, className }: ProductCardProps) {
                 </span>
 
                 {/* Name */}
-                <h3 className="mt-1 font-semibold text-gray-900 dark:text-white line-clamp-2 hover:text-blue-600 dark:hover:text-blue-400 transition-colors">
+                <h3 className="mt-1 font-semibold text-gray-900 dark:text-white line-clamp-2 group-hover:text-blue-600 dark:group-hover:text-blue-400 transition-colors duration-300">
                     {product.name}
                 </h3>
 
@@ -153,6 +195,6 @@ export default function ProductCard({ product, className }: ProductCardProps) {
                     )}
                 </div>
             </div>
-        </div>
+        </motion.div>
     );
 }
