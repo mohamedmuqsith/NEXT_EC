@@ -1,0 +1,456 @@
+{
+    "products": [
+        {
+            "id": 1,
+            "name": "iPhone 15 Pro Max",
+            "price": 1199,
+            "originalPrice": 1299,
+            "category": "mobiles",
+            "image": "https://images.unsplash.com/photo-1696446701796-da61225697cc?w=500&h=500&fit=crop",
+            "rating": 4.9,
+            "reviewCount": 2847,
+            "description": "The most powerful iPhone ever. Featuring the A17 Pro chip, a more advanced camera system, and a new Action button.",
+            "features": [
+                "6.7-inch Super Retina XDR display",
+                "A17 Pro chip with 6-core GPU",
+                "48MP main camera with 5x optical zoom",
+                "Titanium design",
+                "USB-C with USB 3 speeds",
+                "All-day battery life"
+            ],
+            "stock": 50,
+            "brand": "Apple",
+            "isNew": true,
+            "isFeatured": true
+        },
+        {
+            "id": 2,
+            "name": "Samsung Galaxy S24 Ultra",
+            "price": 1099,
+            "originalPrice": 1199,
+            "category": "mobiles",
+            "image": "https://images.unsplash.com/photo-1610945265064-0e34e5519bbf?w=500&h=500&fit=crop",
+            "rating": 4.8,
+            "reviewCount": 1923,
+            "description": "The ultimate Galaxy experience with Galaxy AI built in. Write, edit, search, create, and discover with the power of AI.",
+            "features": [
+                "6.8-inch Dynamic AMOLED 2X display",
+                "Snapdragon 8 Gen 3 processor",
+                "200MP main camera",
+                "S Pen included",
+                "5000mAh battery",
+                "Galaxy AI features"
+            ],
+            "stock": 35,
+            "brand": "Samsung",
+            "isNew": true,
+            "isFeatured": true
+        },
+        {
+            "id": 3,
+            "name": "MacBook Pro 16\" M3 Max",
+            "price": 3499,
+            "originalPrice": 3699,
+            "category": "laptops",
+            "image": "https://images.unsplash.com/photo-1517336714731-489689fd1ca8?w=500&h=500&fit=crop",
+            "rating": 4.9,
+            "reviewCount": 892,
+            "description": "The most powerful MacBook Pro ever is here. With M3 Max chip for breakthrough performance.",
+            "features": [
+                "16.2-inch Liquid Retina XDR display",
+                "Apple M3 Max chip",
+                "Up to 128GB unified memory",
+                "Up to 8TB SSD storage",
+                "22-hour battery life",
+                "Six-speaker sound system"
+            ],
+            "stock": 20,
+            "brand": "Apple",
+            "isNew": true,
+            "isFeatured": true
+        },
+        {
+            "id": 4,
+            "name": "Dell XPS 15",
+            "price": 1899,
+            "originalPrice": 2099,
+            "category": "laptops",
+            "image": "https://images.unsplash.com/photo-1593642702821-c8da6771f0c6?w=500&h=500&fit=crop",
+            "rating": 4.7,
+            "reviewCount": 1245,
+            "description": "Stunning 15.6-inch OLED display with Intel Core Ultra processor for next-level performance.",
+            "features": [
+                "15.6-inch 3.5K OLED display",
+                "Intel Core Ultra 9 processor",
+                "32GB DDR5 RAM",
+                "1TB NVMe SSD",
+                "NVIDIA GeForce RTX 4070",
+                "Thunderbolt 4 ports"
+            ],
+            "stock": 25,
+            "brand": "Dell",
+            "isFeatured": true
+        },
+        {
+            "id": 5,
+            "name": "Sony WH-1000XM5",
+            "price": 349,
+            "originalPrice": 399,
+            "category": "accessories",
+            "image": "https://images.unsplash.com/photo-1546435770-a3e426bf472b?w=500&h=500&fit=crop",
+            "rating": 4.8,
+            "reviewCount": 3456,
+            "description": "Industry-leading noise cancellation with two processors controlling 8 microphones for unprecedented noise cancellation.",
+            "features": [
+                "Industry-leading noise cancellation",
+                "30-hour battery life",
+                "Multipoint connection",
+                "Speak-to-Chat technology",
+                "Super-comfortable design",
+                "Hi-Res Audio"
+            ],
+            "stock": 100,
+            "brand": "Sony",
+            "isFeatured": true
+        },
+        {
+            "id": 6,
+            "name": "Apple Watch Ultra 2",
+            "price": 799,
+            "originalPrice": 849,
+            "category": "smart-devices",
+            "image": "https://images.unsplash.com/photo-1434493789847-2f02dc6ca35d?w=500&h=500&fit=crop",
+            "rating": 4.9,
+            "reviewCount": 1567,
+            "description": "The most rugged and capable Apple Watch pushes the limits in every way. Built for endurance.",
+            "features": [
+                "49mm titanium case",
+                "Always-on Retina display",
+                "S9 SiP with 64-bit dual-core processor",
+                "Precision dual-frequency GPS",
+                "36-hour battery life",
+                "Water resistant to 100m"
+            ],
+            "stock": 45,
+            "brand": "Apple",
+            "isNew": true,
+            "isFeatured": true
+        },
+        {
+            "id": 7,
+            "name": "Google Pixel 8 Pro",
+            "price": 999,
+            "category": "mobiles",
+            "image": "https://images.unsplash.com/photo-1598327105666-5b89351aff97?w=500&h=500&fit=crop",
+            "rating": 4.7,
+            "reviewCount": 876,
+            "description": "The best of Google with Tensor G3 chip. AI-powered photos, calls, messages, and more.",
+            "features": [
+                "6.7-inch Super Actua display",
+                "Google Tensor G3 chip",
+                "50MP main camera",
+                "7 years of OS updates",
+                "AI-powered features",
+                "5050mAh battery"
+            ],
+            "stock": 40,
+            "brand": "Google",
+            "isFeatured": true
+        },
+        {
+            "id": 8,
+            "name": "AirPods Pro 2nd Gen",
+            "price": 249,
+            "category": "accessories",
+            "image": "https://images.unsplash.com/photo-1606220945770-b5b6c2c55bf1?w=500&h=500&fit=crop",
+            "rating": 4.8,
+            "reviewCount": 5234,
+            "description": "Rethink what earbuds can do. Adaptive Audio, Personalized Spatial Audio, and USB-C charging.",
+            "features": [
+                "Active Noise Cancellation",
+                "Transparency mode",
+                "Personalized Spatial Audio",
+                "6 hours of listening time",
+                "MagSafe charging case",
+                "USB-C connector"
+            ],
+            "stock": 150,
+            "brand": "Apple",
+            "isFeatured": true
+        },
+        {
+            "id": 9,
+            "name": "ASUS ROG Strix G16",
+            "price": 1599,
+            "originalPrice": 1799,
+            "category": "laptops",
+            "image": "https://images.unsplash.com/photo-1603302576837-37561b2e2302?w=500&h=500&fit=crop",
+            "rating": 4.6,
+            "reviewCount": 654,
+            "description": "Dominate the competition with Intel Core i9 and RTX 4070 graphics. Born to game.",
+            "features": [
+                "16-inch QHD 240Hz display",
+                "Intel Core i9-14900HX",
+                "NVIDIA RTX 4070 8GB",
+                "32GB DDR5 RAM",
+                "1TB PCIe 4.0 SSD",
+                "Per-key RGB keyboard"
+            ],
+            "stock": 15,
+            "brand": "ASUS"
+        },
+        {
+            "id": 10,
+            "name": "Samsung Galaxy Tab S9 Ultra",
+            "price": 1199,
+            "category": "smart-devices",
+            "image": "https://images.unsplash.com/photo-1544244015-0df4b3ffc6b0?w=500&h=500&fit=crop",
+            "rating": 4.7,
+            "reviewCount": 432,
+            "description": "The ultimate tablet experience with a massive 14.6-inch AMOLED display and S Pen included.",
+            "features": [
+                "14.6-inch Dynamic AMOLED 2X",
+                "Snapdragon 8 Gen 2",
+                "S Pen included",
+                "IP68 water resistance",
+                "11,200mAh battery",
+                "DeX mode support"
+            ],
+            "stock": 30,
+            "brand": "Samsung"
+        },
+        {
+            "id": 11,
+            "name": "Logitech MX Master 3S",
+            "price": 99,
+            "category": "accessories",
+            "image": "https://images.unsplash.com/photo-1527864550417-7fd91fc51a46?w=500&h=500&fit=crop",
+            "rating": 4.8,
+            "reviewCount": 2134,
+            "description": "The most advanced master series mouse yet. 8K DPI tracking, quiet clicks, and MagSpeed scrolling.",
+            "features": [
+                "8K DPI sensor",
+                "Quiet Clicks",
+                "MagSpeed Electromagnetic scrolling",
+                "USB-C quick charging",
+                "Multi-device support",
+                "Ergonomic design"
+            ],
+            "stock": 200,
+            "brand": "Logitech"
+        },
+        {
+            "id": 12,
+            "name": "Amazon Echo Show 10",
+            "price": 249,
+            "category": "smart-devices",
+            "image": "https://images.unsplash.com/photo-1543512214-318c7553f230?w=500&h=500&fit=crop",
+            "rating": 4.5,
+            "reviewCount": 1876,
+            "description": "A smart display with a 10.1-inch HD screen that moves with you. Alexa can show you even more.",
+            "features": [
+                "10.1-inch HD screen",
+                "13MP camera with auto-framing",
+                "Premium speakers",
+                "Smart home hub built-in",
+                "Rotating display",
+                "Alexa voice assistant"
+            ],
+            "stock": 60,
+            "brand": "Amazon"
+        },
+        {
+            "id": 13,
+            "name": "OnePlus 12",
+            "price": 799,
+            "category": "mobiles",
+            "image": "https://images.unsplash.com/photo-1511707171634-5f897ff02aa9?w=500&h=500&fit=crop",
+            "rating": 4.6,
+            "reviewCount": 543,
+            "description": "Flagship killer returns with Snapdragon 8 Gen 3 and the best display ever on a OnePlus phone.",
+            "features": [
+                "6.82-inch 2K LTPO display",
+                "Snapdragon 8 Gen 3",
+                "50MP Hasselblad camera",
+                "5400mAh battery",
+                "100W SUPERVOOC charging",
+                "OxygenOS 14"
+            ],
+            "stock": 55,
+            "brand": "OnePlus",
+            "isNew": true
+        },
+        {
+            "id": 14,
+            "name": "HP Spectre x360 14",
+            "price": 1649,
+            "category": "laptops",
+            "image": "https://images.unsplash.com/photo-1496181133206-80ce9b88a853?w=500&h=500&fit=crop",
+            "rating": 4.7,
+            "reviewCount": 765,
+            "description": "The world's best 2-in-1 laptop with Intel Evo platform and stunning OLED touchscreen.",
+            "features": [
+                "14-inch 2.8K OLED display",
+                "Intel Core Ultra 7",
+                "16GB LPDDR5 RAM",
+                "1TB SSD",
+                "360-degree hinge",
+                "Thunderbolt 4 ports"
+            ],
+            "stock": 22,
+            "brand": "HP"
+        },
+        {
+            "id": 15,
+            "name": "Samsung Galaxy Buds3 Pro",
+            "price": 229,
+            "category": "accessories",
+            "image": "https://images.unsplash.com/photo-1590658268037-6bf12165a8df?w=500&h=500&fit=crop",
+            "rating": 4.6,
+            "reviewCount": 876,
+            "description": "Premium earbuds with intelligent ANC and 360 Audio for immersive sound experience.",
+            "features": [
+                "Intelligent Active Noise Cancellation",
+                "360 Audio",
+                "24-bit Hi-Fi sound",
+                "30-hour battery with case",
+                "IPX7 water resistance",
+                "Galaxy AI features"
+            ],
+            "stock": 120,
+            "brand": "Samsung",
+            "isNew": true
+        },
+        {
+            "id": 16,
+            "name": "Fitbit Sense 2",
+            "price": 299,
+            "category": "smart-devices",
+            "image": "https://images.unsplash.com/photo-1575311373937-040b8e1fd5b6?w=500&h=500&fit=crop",
+            "rating": 4.4,
+            "reviewCount": 1234,
+            "description": "Advanced health smartwatch with stress management, heart health, and 6+ day battery life.",
+            "features": [
+                "Stress management sensor",
+                "Heart rate variability",
+                "ECG app",
+                "Skin temperature sensor",
+                "6+ day battery life",
+                "Built-in GPS"
+            ],
+            "stock": 70,
+            "brand": "Fitbit"
+        },
+        {
+            "id": 17,
+            "name": "Razer BlackWidow V4 Pro",
+            "price": 229,
+            "category": "accessories",
+            "image": "https://images.unsplash.com/photo-1595225476474-87563907a212?w=500&h=500&fit=crop",
+            "rating": 4.7,
+            "reviewCount": 432,
+            "description": "The apex of gaming keyboards with Razer Green switches and command dial for ultimate control.",
+            "features": [
+                "Razer Green Mechanical Switches",
+                "Multi-function Dial & Media Keys",
+                "Doubleshot ABS Keycaps",
+                "Razer Chroma RGB",
+                "Magnetic wrist rest",
+                "8000Hz polling rate"
+            ],
+            "stock": 85,
+            "brand": "Razer"
+        },
+        {
+            "id": 18,
+            "name": "Xiaomi 14 Ultra",
+            "price": 1299,
+            "category": "mobiles",
+            "image": "https://images.unsplash.com/photo-1592899677977-9c10ca588bbd?w=500&h=500&fit=crop",
+            "rating": 4.8,
+            "reviewCount": 324,
+            "description": "Professional photography meets flagship performance. Co-engineered with Leica.",
+            "features": [
+                "6.73-inch LTPO AMOLED",
+                "Snapdragon 8 Gen 3",
+                "Leica quad camera system",
+                "5300mAh battery",
+                "90W HyperCharge",
+                "IP68 rated"
+            ],
+            "stock": 25,
+            "brand": "Xiaomi",
+            "isNew": true
+        },
+        {
+            "id": 19,
+            "name": "LG UltraGear 27GP950-B",
+            "price": 799,
+            "category": "accessories",
+            "image": "https://images.unsplash.com/photo-1527443224154-c4a3942d3acf?w=500&h=500&fit=crop",
+            "rating": 4.8,
+            "reviewCount": 567,
+            "description": "4K Nano IPS gaming monitor with 144Hz refresh rate and HDMI 2.1 for next-gen gaming.",
+            "features": [
+                "27-inch 4K Nano IPS display",
+                "144Hz refresh rate",
+                "1ms response time",
+                "HDMI 2.1 for PS5/Xbox",
+                "NVIDIA G-SYNC compatible",
+                "HDR600"
+            ],
+            "stock": 40,
+            "brand": "LG"
+        },
+        {
+            "id": 20,
+            "name": "Google Nest Hub Max",
+            "price": 229,
+            "category": "smart-devices",
+            "image": "https://images.unsplash.com/photo-1558089687-f282ffcbc126?w=500&h=500&fit=crop",
+            "rating": 4.5,
+            "reviewCount": 987,
+            "description": "The biggest, best display for your smart home with a 10-inch screen and Nest Cam built-in.",
+            "features": [
+                "10-inch HD touchscreen",
+                "Built-in Nest Cam",
+                "Stereo speakers",
+                "Google Assistant",
+                "Face Match technology",
+                "Smart home controls"
+            ],
+            "stock": 55,
+            "brand": "Google"
+        }
+    ],
+    "categories": [
+        {
+            "id": "mobiles",
+            "name": "Mobiles",
+            "icon": "Smartphone",
+            "productCount": 6,
+            "image": "https://images.unsplash.com/photo-1511707171634-5f897ff02aa9?w=400&h=300&fit=crop"
+        },
+        {
+            "id": "laptops",
+            "name": "Laptops",
+            "icon": "Laptop",
+            "productCount": 5,
+            "image": "https://images.unsplash.com/photo-1496181133206-80ce9b88a853?w=400&h=300&fit=crop"
+        },
+        {
+            "id": "accessories",
+            "name": "Accessories",
+            "icon": "Headphones",
+            "productCount": 7,
+            "image": "https://images.unsplash.com/photo-1546435770-a3e426bf472b?w=400&h=300&fit=crop"
+        },
+        {
+            "id": "smart-devices",
+            "name": "Smart Devices",
+            "icon": "Watch",
+            "productCount": 5,
+            "image": "https://images.unsplash.com/photo-1434493789847-2f02dc6ca35d?w=400&h=300&fit=crop"
+        }
+    ]
+}
